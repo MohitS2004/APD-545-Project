@@ -1,0 +1,15 @@
+package com.blueharbor.hotel.model.activity;
+
+public enum ActivityAction {
+    LOGIN,
+    LOGOUT,
+    RESERVATION_CREATED,
+    RESERVATION_UPDATED,
+    RESERVATION_CANCELLED,
+    PAYMENT_CAPTURED,
+    PAYMENT_REFUNDED,
+    CHECKOUT_COMPLETED,
+    WAITLIST_CREATED,
+    WAITLIST_CONVERTED,
+    DISCOUNT_APPLIED
+}

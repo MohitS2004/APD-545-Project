@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.blueharbor.hotel.controller.FeedbackController"
+      spacing="12" stylesheets="@../styles/app.css">
+    <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+    <Label text="%feedback.title" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+    <HBox spacing="12">
+        <Label text="Reservation Code:"/>
+        <TextField fx:id="confirmationField" promptText="e.g., BH-2024-0001"/>
+    </HBox>
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Label text="Rating"/>
+        <Slider fx:id="ratingSlider" min="1" max="5" majorTickUnit="1" minorTickCount="0" snapToTicks="true" showTickMarks="true" showTickLabels="true"/>
+    </HBox>
+    <TextArea fx:id="commentArea" promptText="Let us know what stood out to you..." prefRowCount="5"/>
+    <HBox spacing="8">
+        <Button text="Submit Feedback" styleClass="primary-button" onAction="#submitFeedback"/>
+        <Button text="← Back to Welcome" styleClass="secondary-button" onAction="#backToWelcome"/>
+        <Label fx:id="feedbackStatusLabel"/>
+    </HBox>
+</VBox>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.blueharbor.hotel.controller.kiosk.RoomStepController"
+      spacing="12">
+    <Label text="Choose your rooms" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    <Label text="We suggested a combination that satisfies occupancy. Adjust if you prefer." wrapText="true"/>
+    <TableView fx:id="roomPlanTable" prefHeight="220">
+        <columns>
+            <TableColumn text="Type" prefWidth="140"/>
+            <TableColumn text="Quantity" prefWidth="120"/>
+            <TableColumn text="Guests Supported" prefWidth="160"/>
+            <TableColumn text="Nightly Rate" prefWidth="120"/>
+        </columns>
+    </TableView>
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <ChoiceBox fx:id="roomTypeChoice" prefWidth="160"/>
+        <Spinner fx:id="roomQuantitySpinner" prefWidth="100" editable="true"/>
+        <Button text="Set Quantity" onAction="#handleAddRoom"/>
+    </HBox>
+    <Label text="Need more control? Tap policy reminders before editing quantities." wrapText="true"/>
+    <Button text="Room Booking Policy" styleClass="secondary-button" onAction="#openPolicyDialog"/>
+    <Label fx:id="errorLabel" styleClass="error-label" visible="false"/>
+</VBox>

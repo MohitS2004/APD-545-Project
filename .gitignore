@@ -1,0 +1,12 @@
+.idea/
+.vscode/
+*.iml
+target/
+out/
+logs/
+.DS_Store
+*.log
+/export/*.csv
+/export/*.pdf
+/export/*.txt
+hs_err_pid*

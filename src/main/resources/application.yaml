@@ -1,0 +1,85 @@
+spring:
+  application:
+    name: blueharbor-hotel
+  main:
+    banner-mode: off
+    web-application-type: none
+  datasource:
+    url: jdbc:h2:mem:blueharbor;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+logging:
+  level:
+    root: INFO
+    com.blueharbor.hotel: DEBUG
+  file:
+    name: logs/blueharbor.log
+
+app:
+  hotel:
+    name: Blue Harbor Hotel
+    city: Aurora Bay
+    timezone: America/New_York
+    totalRooms: 120
+  occupancy:
+    single: 2
+    double: 4
+    deluxe: 2
+    penthouse: 2
+  pricing:
+    weekdayMultiplier: 1.0
+    weekendMultiplier: 1.25
+    seasonal:
+      - name: Peak
+        multiplier: 1.4
+        start: 06-01
+        end: 08-31
+      - name: Holiday
+        multiplier: 1.5
+        start: 12-15
+        end: 01-05
+    baseRates:
+      SINGLE: 120
+      DOUBLE: 190
+      DELUXE: 260
+      PENTHOUSE: 420
+    addOns:
+      WIFI:
+        price: 10
+        perNight: true
+      BREAKFAST:
+        price: 22
+        perNight: true
+      PARKING:
+        price: 18
+        perNight: true
+      SPA:
+        price: 95
+        perNight: false
+  loyalty:
+    earningRate: 0.05
+    redemptionRate: 0.01
+    redemptionCapPercent: 20
+    enrollmentBonus: 250
+  discounts:
+    adminCap: 0.15
+    managerCap: 0.30
+  reporting:
+    exportFolder: export
+    dateFormat: yyyy-MM-dd

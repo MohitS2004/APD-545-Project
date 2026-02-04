@@ -1,0 +1,38 @@
+:root {
+    -fx-font-family: "Segoe UI", "Sans-Serif";
+    -fx-base: #0f172a;
+    -fx-accent: #1d4ed8;
+}
+
+.app-background {
+    -fx-background-color: linear-gradient(to bottom, #0f172a, #1e293b);
+    -fx-padding: 24;
+}
+
+.card {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+    -fx-background-radius: 16;
+    -fx-padding: 24;
+    -fx-effect: dropshadow(one-pass-box, rgba(15, 23, 42, 0.2), 18, 0, 0, 12);
+}
+
+.primary-button {
+    -fx-background-color: #1d4ed8;
+    -fx-text-fill: #fff;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 12 18;
+}
+
+.secondary-button {
+    -fx-background-color: transparent;
+    -fx-border-color: #1d4ed8;
+    -fx-border-radius: 8;
+    -fx-text-fill: #1d4ed8;
+    -fx-padding: 10 16;
+}
+
+.error-label {
+    -fx-text-fill: #dc2626;
+    -fx-font-size: 12px;
+}

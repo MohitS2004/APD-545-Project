@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
+           stylesheets="@../styles/app.css"
+           fx:controller="com.blueharbor.hotel.controller.LoginController"
+           styleClass="app-background">
+    <VBox alignment="CENTER" spacing="18" maxWidth="420">
+        <VBox alignment="CENTER" spacing="4">
+            <Text text="%login.title" style="-fx-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;"/>
+            <Label text="Operations access only" style="-fx-text-fill: #e2e8f0;"/>
+        </VBox>
+        <VBox spacing="12" styleClass="card" prefWidth="380">
+            <Label text="%login.email"/>
+            <TextField fx:id="emailField" promptText="admin@blueharbor.com"/>
+            <Label text="%login.password"/>
+            <PasswordField fx:id="passwordField" promptText="Password"/>
+            <Label fx:id="errorLabel" styleClass="error-label" visible="false"/>
+            <Button text="%login.button" styleClass="primary-button"
+                    onAction="#handleLogin"/>
+            <Button text="← Back to Welcome" styleClass="secondary-button"
+                    onAction="#handleBackToWelcome"/>
+        </VBox>
+    </VBox>
+</StackPane>

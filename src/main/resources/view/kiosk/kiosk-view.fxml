@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.media.MediaView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.blueharbor.hotel.controller.KioskController"
+            stylesheets="@../../styles/app.css"
+            styleClass="app-background">
+    <left>
+        <VBox spacing="16" prefWidth="260">
+            <Label text="Welcome to Blue Harbor Hotel" style="-fx-text-fill: #fff; -fx-font-size: 20px;"/>
+            <Text wrappingWidth="220"
+                  text="Follow the steps to book your stay. Rules and policies are always available." style="-fx-fill: #cbd5f5;"/>
+            <Button text="Rules &amp; Policies" styleClass="secondary-button" onAction="#showRules"/>
+            <Button text="← Exit to Welcome" styleClass="secondary-button" onAction="#exitToLogin"/>
+            <VBox spacing="12">
+                <Label text="Instructional media"/>
+                <MediaView fx:id="mediaView" fitWidth="220" fitHeight="140"/>
+            </VBox>
+        </VBox>
+    </left>
+    <center>
+        <StackPane>
+            <VBox spacing="18" styleClass="card" prefWidth="720">
+                <Text text="%kiosk.welcome" style="-fx-font-size: 26px; -fx-font-weight: bold;"/>
+                <ProgressBar fx:id="progressBar" progress="0.0"/>
+                <StackPane fx:id="stepPane"/>
+                <HBox spacing="12" alignment="CENTER_RIGHT">
+                    <Button text="Back" styleClass="secondary-button" onAction="#previousStep"/>
+                    <Button text="Next" styleClass="primary-button" onAction="#nextStep" fx:id="nextButton"/>
+                </HBox>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>

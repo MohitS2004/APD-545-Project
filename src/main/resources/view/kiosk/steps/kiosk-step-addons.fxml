@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.blueharbor.hotel.controller.kiosk.AddOnStepController"
+      spacing="12">
+    <Label text="Enhance your stay" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    <ListView fx:id="addOnList" prefHeight="180"/>
+    <Label text="Tap each add-on to see pricing impact before continuing." wrapText="true"/>
+</VBox>
